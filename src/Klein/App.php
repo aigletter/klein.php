@@ -85,7 +85,7 @@ class App
      */
     public function register($name, $closure)
     {
-        if (isset($this->services[$name])) {
+        if ($this->services[$name] !== null) {
             throw new DuplicateServiceException('A service is already registered under '. $name);
         }
 
